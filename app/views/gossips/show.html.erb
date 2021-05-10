@@ -5,4 +5,4 @@
 
 <h2><%=@gossip.id%> - <%=@gossip.title%></h2>
 <p><%=@gossip.content%></p>
-<h6>Potin créer par <%=@gossip.user.first_name%><%= link_to 'Voir', user_path %></h6>
+<h6>Potin creer par  <%= link_to @gossip.user.first_name , user_path(@gossip.user) %> </h6>
