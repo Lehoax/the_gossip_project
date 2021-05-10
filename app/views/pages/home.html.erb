@@ -1,5 +1,8 @@
+
+
 <%@gossips.each do |gossip| %>
-    <h4><%=gossip.user.first_name%><h4>
-    <p><%=gossip.content %></p>
-    <hr>
+    <div class="full_gossip">
+        <h4 class="title_gossip"><%=gossip.user.first_name%><h4>
+        <p class="content_gossip"><%=gossip.content %></p>
+    </div>
 <% end %>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Gossips</h1>
+<h1>Liste des pottins</h1>
 
 <table>
   <thead>
@@ -14,7 +14,7 @@
       <tr>
         <td><%= gossip.id %></td>
         <td><%= gossip.title %></td>
-        <td><%= link_to 'Show', gossip %></td>
+        <td><%= link_to 'Voir', gossip, {:class=>"btn btn-primary" } %></td>
         <td><%#= link_to 'Edit', edit_gossip_path(gossip) %></td>
         <td><%#= link_to 'Destroy', gossip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
