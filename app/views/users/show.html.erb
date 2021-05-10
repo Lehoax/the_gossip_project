@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<% link_to 'Back', users_path %>
+<h5>
+<%= @user.id %>
+<%= @user.first_name %>
+<%= @user.last_name %>
+</h5>
+<h6> <%= @user.description %> </h6>
+
+<br>
+
+<% @user.gossips.each do |gossip| %>
+
+<h6> <%= link_to gossip.title , gossip_path %></h6>
+<p> <%=  gossip.content %>  </p>
+<% end %>
+
+<br>
+<%# link_to 'Edit', edit_user_path(@user) %> 

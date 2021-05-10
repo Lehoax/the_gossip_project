@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<%#= link_to 'Edit', edit_gossip_path(@gossip) %> |
+<%= link_to 'Back', gossips_path %>
+
+<h2><%=@gossip.id%> - <%=@gossip.title%></h2>
+<p><%=@gossip.content%></p>
+<h6>Potin créer par <%=@gossip.user.first_name%><%= link_to 'Voir', user_path %></h6>
