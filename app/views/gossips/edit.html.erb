@@ -1,6 +1,18 @@
 <h1>Editing Gossip</h1>
 
-<%= render 'form', gossip: @gossip %>
-
 <%= link_to 'Show', @gossip %> |
 <%= link_to 'Back', gossips_path %>
+
+<%= form_for(@gossip) do |f| %>
+
+  <div class="field">
+    <%= f.label :titre %><br>
+    <%= f.text_field :title %><br>
+    <%= f.label :contenu %><br>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

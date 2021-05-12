@@ -1,5 +1,13 @@
-<h1>New Gossip</h1>
+<h1>Nouveau pottin</h1>
 
-<%= render 'form', gossip: @gossip %>
-
-<%= link_to 'Back', gossips_path %>
+<%=form_with model: @gossip, url: gossips_path do |f| %>
+    <div class="form-group">
+    <label>Titre de l'article</label>
+    <%= f.text_field :title %>
+    </div>
+    <div class="form-group">
+    <label>Contenu de l'article</label>
+    <%= f.text_field :content %>
+    </div>
+    <button type="submit">Créer</button>
+<% end %>

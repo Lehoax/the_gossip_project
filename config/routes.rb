@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/team', to:'pages#team'
   get '/contact', to:'pages#contact'
   get '/welcome/:name', to: 'pages#welcome'
+  resources :gossips
+
 end

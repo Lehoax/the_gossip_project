@@ -22,17 +22,8 @@ class GossipsController < ApplicationController
 
   # POST /gossips or /gossips.json
   def create
-    @gossip = Gossip.new(gossip_params)
-
-    respond_to do |format|
-      if @gossip.save
-        format.html { redirect_to @gossip, notice: "Gossip was successfully created." }
-        format.json { render :show, status: :created, location: @gossip }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @gossip.errors, status: :unprocessable_entity }
-      end
-    end
+    @gossip = Gossip.create(title: params[:gossip][:title], content: params[:gossip][:content], user_id: 2)
+    redirect_to gossips_url
   end
 
   # PATCH/PUT /gossips/1 or /gossips/1.json
@@ -65,6 +56,6 @@ class GossipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def gossip_params
-      params.fetch(:gossip, {})
+      params.require(:gossip).permit(:title, :content)
     end
 end

@@ -10,12 +10,14 @@
   </thead>
 
   <tbody>
+  <%= link_to 'New Gossip', new_gossip_path %>
+
     <% @gossips.each do |gossip| %>
       <tr>
         <td><%= gossip.id %></td>
         <td><%= gossip.title %></td>
         <td><%= link_to 'Voir', gossip, {:class=>"btn btn-primary" } %></td>
-        <td><%#= link_to 'Edit', edit_gossip_path(gossip) %></td>
+        <td><%#= link_to 'Edit', edit_gossip_path(gossip) , {:class=>"btn btn-primary" } %></td>
         <td><%#= link_to 'Destroy', gossip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -24,4 +26,3 @@
 
 <br>
 
-<%#= link_to 'New Gossip', new_gossip_path %>
